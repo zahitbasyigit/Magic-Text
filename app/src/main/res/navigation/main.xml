@@ -26,7 +26,7 @@
 
     <dialog
         android:id="@+id/addTextDialogFragment"
-        android:name="zahit.textmagic.ui.video.display.AddTextDialogFragment"
+        android:name="zahit.textmagic.ui.video.display.text.add.AddTextDialogFragment"
         tools:layout="@layout/fragment_add_text_dialog">
         <action
             android:id="@+id/action_addTextDialogFragment_to_videoEditFragment"
@@ -38,7 +38,7 @@
     </dialog>
     <dialog
         android:id="@+id/removeTextDialogFragment"
-        android:name="zahit.textmagic.ui.video.display.RemoveTextDialogFragment"
+        android:name="zahit.textmagic.ui.video.display.text.remove.RemoveTextDialogFragment"
         android:label="fragment_remove_text_dialog"
         tools:layout="@layout/fragment_remove_text_dialog" />
 

@@ -1,10 +1,11 @@
-package zahit.textmagic.ui.view
+package zahit.textmagic.ui.video
 
 import android.content.Context
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
@@ -20,6 +21,7 @@ import kotlinx.android.synthetic.main.view_progress_video.view.progressBar
 import kotlinx.android.synthetic.main.view_progress_video.view.videoFrame
 import kotlinx.android.synthetic.main.view_progress_video.view.videoView
 import zahit.textmagic.R
+import zahit.textmagic.model.Constants
 import zahit.textmagic.model.Constants.Companion.TOUCH_RECORD_SENSITIVITY_IN_MILLIS
 import zahit.textmagic.model.MagicText
 
@@ -43,9 +45,9 @@ class ProgressVideoView @JvmOverloads constructor(
     init {
         inflate(context, R.layout.view_progress_video, this)
         videoView.player = simpleExoPlayer
-        val uri = Uri.parse("asset:///video.mp4")
+        val uri = Uri.parse(Constants.VIDEO_URI)
         val mediaSource = ProgressiveMediaSource
-            .Factory(DefaultDataSourceFactory(context, "TextMagic"))
+            .Factory(DefaultDataSourceFactory(context, Constants.USER_AGENT))
             .createMediaSource(MediaItem.fromUri(uri))
 
         simpleExoPlayer.repeatMode = Player.REPEAT_MODE_ALL
@@ -98,7 +100,8 @@ class ProgressVideoView @JvmOverloads constructor(
                 )
                 id = magicText.textViewId
                 text = magicText.text
-                textSize = 32f
+                val fontSize = resources.getDimension(R.dimen.magic_text_font_size)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
                 gravity = Gravity.CENTER
                 visibility = View.INVISIBLE
                 setTextColor(ContextCompat.getColor(context, R.color.colorPrimary))

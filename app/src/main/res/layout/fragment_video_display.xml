@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.video.display.VideoDisplayFragment">
 
-    <zahit.textmagic.ui.view.ProgressVideoView
+    <zahit.textmagic.ui.video.ProgressVideoView
         android:id="@+id/videoDisplayProgressVideoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

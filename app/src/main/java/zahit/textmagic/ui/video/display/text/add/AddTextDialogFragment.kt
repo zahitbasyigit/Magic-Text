@@ -1,4 +1,4 @@
-package zahit.textmagic.ui.video.display
+package zahit.textmagic.ui.video.display.text.add
 
 import android.os.Bundle
 import android.view.LayoutInflater

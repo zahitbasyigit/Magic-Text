@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.video.display.RemoveTextDialogFragment">
+    tools:context=".ui.video.display.text.remove.RemoveTextDialogFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/magicTextRecyclerView"
