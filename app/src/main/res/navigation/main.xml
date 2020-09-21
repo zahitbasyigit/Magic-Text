@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/videoDisplayFragment">
+
+    <fragment
+        android:id="@+id/videoDisplayFragment"
+        android:name="zahit.textmagic.ui.video.display.VideoDisplayFragment"
+        tools:layout="@layout/fragment_video_display">
+        <action
+            android:id="@+id/action_videoDisplayFragment_to_addTextDialogFragment"
+            app:destination="@id/addTextDialogFragment"
+            app:exitAnim="@anim/hold"
+            app:popExitAnim="@anim/hold" />
+        <action
+            android:id="@+id/action_videoDisplayFragment_to_removeTextDialogFragment"
+            app:destination="@id/removeTextDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/videoEditFragment"
+        android:name="zahit.textmagic.ui.video.edit.VideoEditFragment"
+        tools:layout="@layout/fragment_video_edit" />
+
+    <dialog
+        android:id="@+id/addTextDialogFragment"
+        android:name="zahit.textmagic.ui.video.display.AddTextDialogFragment"
+        tools:layout="@layout/fragment_add_text_dialog">
+        <action
+            android:id="@+id/action_addTextDialogFragment_to_videoEditFragment"
+            app:destination="@id/videoEditFragment"
+            app:enterAnim="@anim/hold"
+            app:exitAnim="@anim/hold"
+            app:popEnterAnim="@anim/hold"
+            app:popExitAnim="@anim/hold" />
+    </dialog>
+    <dialog
+        android:id="@+id/removeTextDialogFragment"
+        android:name="zahit.textmagic.ui.video.display.RemoveTextDialogFragment"
+        android:label="fragment_remove_text_dialog"
+        tools:layout="@layout/fragment_remove_text_dialog" />
+
+</navigation>
